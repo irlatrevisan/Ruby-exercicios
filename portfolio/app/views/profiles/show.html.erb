@@ -20,11 +20,19 @@
   <%= @profile.bio %>
 </p>
 
+
 <p>
   <strong>Skills:</strong>
   <% @profile.skills.each do |skill| %>
   <td><%= skill.name %></td>
   <% end %>
+</p>
+
+<p>
+  <strong>Jobs:</strong>
+  <% @profile.jobs.each do |job| %>
+  <td><%= job.title %></td>
+  <% end%>
 </p>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |

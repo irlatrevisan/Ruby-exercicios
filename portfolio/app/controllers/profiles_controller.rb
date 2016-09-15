@@ -16,6 +16,7 @@ class ProfilesController < ApplicationController
   def new
     @profile = Profile.new
     @profile.skills.build
+    @profile.jobs.build
   end
 
   # GET /profiles/1/edit
@@ -69,6 +70,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:name, :email, :github, :bio, skills_attributes: [:name, :years])
+      params.require(:profile).permit(:name, :email, :github, :bio, skills_attributes: [:name, :years], jobs_attributes: [:title, :description])
     end
 end
