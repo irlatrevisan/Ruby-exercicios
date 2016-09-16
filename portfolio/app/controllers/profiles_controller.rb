@@ -15,12 +15,17 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
     @profile = Profile.new
-    @profile.skills.build
+    10.times do
+      @profile.skills.build
+    end
     @profile.jobs.build
   end
 
   # GET /profiles/1/edit
   def edit
+    10.times do
+      @profile.skills.build
+    end
   end
 
   # POST /profiles
