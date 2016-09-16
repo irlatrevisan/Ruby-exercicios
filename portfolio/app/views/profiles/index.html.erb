@@ -1,33 +1,47 @@
-<p id="notice"><%= notice %></p>
-<div id="conteudo">
-<h1>Profiles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Github</th>
-      <th>Bio</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= profile.name %></td>
-        <td><%= profile.email %></td>
-        <td><%= profile.github %></td>
-        <td><%= profile.bio %></td>
-        <td><%= link_to 'Show', profile %></td>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      <% end %>
-  </tbody>
-</table>
-
-<br>
-<%= link_to 'Novo Perfil', new_profile_path %>
+<div class="cabecalho">
+<div class="avatar">
+  <%= image_tag @profile.avatar.url(:medium) %>
 </div>
+  <h1 class="nome"><%= @profile.name %></h2>
+
+  <p class="nome">
+    Olá, meu nome é <b><%=@profile.name %></b> e sou freelancer em Ruby on Rails.
+  </p>
+
+<div class="quadros">
+  <p>
+    <h3>Biografia</h3>
+    <p><%= @profile.bio %></p>
+  </p>
+</div>
+<div class="quadros">
+<p>
+  <h3>Skills</h3>
+  <p>
+    <ul>
+      <% @profile.skills.each do |skill| %>
+      <li class="skill"><%= skill.name %></li>
+      <% end %>
+    </ul>
+  </p>
+</p>
+</div>
+</div>
+
+
+<p>
+  <h3>Jobs</h3>
+  <p>
+    <div class="ui three column grid">
+    <% @profile.jobs.each do |job| %>
+    <div class="column">
+    <ul>
+      <li><%= image_tag job.img_job.url(:thumb) %></li>
+      <li><%= job.title %></li>
+    </ul>
+  </div>
+  <% end %>
+  </p>
+  <!-- <%= link_to "New Job", controller: "jobs", action: "new", id: @profile %> -->
+</div>
+</p>

@@ -1,21 +1,65 @@
 // Place all the styles related to the Profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body{
+@import "semantic-ui";
+/*body{
+  color:black;
+}
+ul{
   padding: 0;
   margin: 0;
 }
-#conteudo{
-  width:900px;
-  margin: 0 auto;
+li{
+  display: inline;
+  list-style: none;
 }
-table{
+.outer-wrapper{
+  padding: 10px;
+  border: 1px dashed #ccc;
+  border-radius:10px;
+  max-width: 600px;
+  margin: auto;
+}
+.avatar{
+  width:120px;
+  height: 120px;
+  margin: auto;
+  border-radius: 100%;
+  overflow: hidden;
+  & img{
+    width: 100%;
+  }
+}
+
+hr{
+  border-style: dashed;
+  border-color: #ccc;
+}
+
+h3{
+  font-family: "Comic Sans MS";
+  font-size: 22pt;
+  margin-left:10px;
+  color: #000;
+
+}
+.quadros{
+  width:300px;
   border: 2px solid #000;
-  border-radius:5px;
+  border-radius:10px;
+  display: inline-block;
+  background-color: #fff;
+  margin: 10px;
 }
-table td{
-  border:1px solid #000;
+
+.cabecalho{
+  padding:5px;
+  background-color: #CFCFCF;
+  border-radius:10px;
+  box-shadow: 5px 5px 5px gray;
+  margin-bottom: 60px;
 }
-.btnsubmit{
-  border-radius: 5px;
-}
+
+.box-jobs{
+  display: inline-block;
+}*/

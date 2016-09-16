@@ -10,14 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915182936) do
+ActiveRecord::Schema.define(version: 20160916174048) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
     t.integer  "profile_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "img_job_file_name"
+    t.string   "img_job_content_type"
+    t.integer  "img_job_file_size"
+    t.datetime "img_job_updated_at"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -25,8 +29,12 @@ ActiveRecord::Schema.define(version: 20160915182936) do
     t.string   "email"
     t.string   "github"
     t.string   "bio"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "skills", force: :cascade do |t|

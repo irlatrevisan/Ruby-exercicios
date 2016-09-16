@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all
+    @profile = Profile.first
   end
 
   # GET /profiles/1
@@ -15,17 +15,13 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
     @profile = Profile.new
-    10.times do
-      @profile.skills.build
-    end
+    @profile.skills.build
     @profile.jobs.build
   end
 
   # GET /profiles/1/edit
   def edit
-    10.times do
-      @profile.skills.build
-    end
+
   end
 
   # POST /profiles
@@ -68,13 +64,13 @@ class ProfilesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_profile
-      @profile = Profile.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_profile
+    @profile = Profile.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def profile_params
-      params.require(:profile).permit(:name, :email, :github, :bio, skills_attributes: [:name, :years], jobs_attributes: [:title, :description])
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def profile_params
+    params.require(:profile).permit(:avatar, :name, :email, :github, :bio, skills_attributes: [:id, :name, :years], jobs_attributes: [:id, :title, :description])
+  end
 end
